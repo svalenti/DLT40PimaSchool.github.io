@@ -4,7 +4,7 @@
 
 - Program [to do list](to_do_list.md)
 
-![./images/Prompt.jpg](./images/Prompt.jpg)
+![./images/Prompt.jpg](DLT40PimaSchool.github.io/images/Prompt.jpg)
 
 ## Welcome to GitHub Pages
 
