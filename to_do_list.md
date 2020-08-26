@@ -1,15 +1,15 @@
 # Dennis:
+start to put some text in the webpage, PIMA logo
 
-Join github
-what the video should have
 
 # David:
-worrk on the proposal
+work on the proposal
 jupiter notebook
-wiki page
-invite others to github
+start to put some text in the webpage
 
 # Stefano:
-jupiter notebook
-wiki page
-invite others to github
+look at the link Dave shared and work on the github page
+add more lectures to github
+
+
+
