@@ -4,6 +4,8 @@
 
 - Program [to do list](to_do_list.md)
 
+![images/Prompt.jpg](src)
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/svalenti/DLT40PimaSchool.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
