@@ -1,9 +1,9 @@
-## Welcome to the DLT40 Pima School page 
-
+ <img src="https://svalenti.github.io/DLT40PimaSchool.github.io/images/Prompt.jpg" alt="hi" class="inline"/> 
+ ## Welcome to the DLT40 Pima School page 
 - point to the list page [to do list](to_do_list.md)
 
 - Program [to do list](to_do_list.md)
-<img src="https://svalenti.github.io/DLT40PimaSchool.github.io/images/Prompt.jpg" alt="hi" class="inline"/>
+
 
 
 ## Welcome to GitHub Pages
