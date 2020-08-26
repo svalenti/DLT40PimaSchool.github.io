@@ -1,3 +1,9 @@
+## Welcome to the DLT40 Pima School page 
+
+- point to the list page [to do list](to_do_list.md)
+
+- Program [to do list](to_do_list.md)
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/svalenti/DLT40PimaSchool.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
