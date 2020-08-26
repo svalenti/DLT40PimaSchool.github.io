@@ -3,6 +3,7 @@
 - point to the list page [to do list](to_do_list.md)
 
 - Program [to do list](to_do_list.md)
+<img src="../images/Prompt.jpg" alt="hi" class="inline"/>
 
 ![../images/Prompt.jpg](../images/Prompt.jpg)
 
