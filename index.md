@@ -5,7 +5,6 @@
 - Program [to do list](to_do_list.md)
 <img src="https://svalenti.github.io/DLT40PimaSchool.github.io/images/Prompt.jpg" alt="hi" class="inline"/>
 
-![../images/Prompt.jpg](../images/Prompt.jpg)
 
 ## Welcome to GitHub Pages
 
