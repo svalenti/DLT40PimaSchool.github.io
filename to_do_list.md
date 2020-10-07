@@ -1,6 +1,9 @@
 # Dennis:
-start to put some text in the webpage, PIMA logo
-
+(1) Schedule meeting with Laurie
+  Monday 1pm-4pm
+  Wednesday 1pm-4pm
+(2) Ask to move AST 296LB to late start 8-week.
+(3) Start to put some text in the webpage, PIMA logo
 
 # David:
 work on the proposal
