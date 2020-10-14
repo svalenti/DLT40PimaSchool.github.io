@@ -1,4 +1,8 @@
-# School program:
+---
+layout: page
+title: School program
+permalink: /schoolprogram/
+---
 
 * [lecture 1](notebook/lecture1/color_image.ipynb): Introduction to python (I):  what is python? What is a notebook?
 * [lecture 2](notebook/lecture2/): Introduction to python (II):  what is python? What is a notebook?
