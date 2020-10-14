@@ -1,4 +1,5 @@
-theme: jekyll-theme-cayman
+theme: minima
+# jekyll-theme-cayman
 title: DLT40 Pima Community College School
 description: An opportunity for PCC students to do research with DLT40 astronomers!
 url: "/"
