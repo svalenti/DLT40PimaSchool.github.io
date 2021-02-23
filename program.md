@@ -4,7 +4,7 @@ title: School program
 permalink: /schoolprogram/
 ---
 
-* [lecture 1](notebook/lecture1/): Introduction to python (I):  what is python? What is a notebook?
+* [lecture 1](notebook/lecture1/): Introduction to shell and jupyter notebook?
 * [lecture 2](notebook/lecture2/): Introduction to python (II):  what is python? What is a notebook?
 * [lecture 3](notebook/lecture3/): Use python for astronomical data: Let's make a nice image of a nearby galaxy.
 * [lecture 4](notebook/lecture4/): Use python for measure the distance of a galaxy with variable stars.
