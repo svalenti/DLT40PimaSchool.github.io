@@ -54,7 +54,7 @@ These are the notes for the PIMA school 2021.
 
 \chapter{lecture 0}
 
-\section{Introduction to Shell terminal}
+\section{Introcuction to Shell terminal}
 The shell is a program where users can type commands. With the shell, it’s possible to invoke complicated programs like climate modeling software or simple commands that create an empty directory with only one line of code. The most popular Unix shell is Bash (the Bourne Again SHell — so-called because it’s derived from a shell written by Stephen Bourne). Bash is the default shell on most modern implementations of Unix and in most packages that provide Unix-like tools for Windows.
 
 Using the shell will take some effort and some time to learn. While a GUI presents you with choices to select, CLI choices are not automatically presented to you, so you must learn a few commands like new vocabulary in a language you’re studying. However, unlike a spoken language, a small number of “words” (i.e. commands) gets you a long way, and we’ll cover those essential few today.
@@ -123,6 +123,69 @@ mkdir pima
 \includegraphics[scale=.6]{figures/mkdirpima.png}
 \caption{make a new directory}
 \end{figure}
+
+\section{Install miniconda and PIMA environment } 
+------------------------------------ \\
+{\bf Installing Miniconda3 under Windows} \\
+------------------------------------ \\
+Download and run the appropriate installer from: \\
+$https://docs.conda.io/en/latest/miniconda.html$
+If prompted, you should choose to:\\
+1)  Accept the license / terms of use.\\
+2)  Install for just the current user, not all users.\\
+Once installed, check that you can run the "Anaconda Prompt".  \\
+From the prompt, run the command:conda --version\\
+
+Video to install miniconda on Windows \\
+https://www.youtube.com/watch?v=tXgPY4lc6fo \\
+
+-------------------------------------------- \\
+Installing Miniconda3 under Linux or macOS \\
+-------------------------------------------- \\
+Download the appropriate installer for your OS here:
+$https://docs.conda.io/en/latest/miniconda.html$ \\
+For macOS, you can choose between a "package" or "bash" version. \\
+I find it easier to follow the bash version, but the package version will work too.  I recommend you make the following choices described below.\\
+1)  Accept the license / terms of use. \\
+2)  Do not install for all users, but just the current user.\\
+3)  You might be asked whether or not to allow the installer to issue "conda init".  \\
+Answering "no" will require you to activate conda yourself each time you open a new terminal, following the instructions that will be provided during installation.   Make sure you record these instructions if you choose "no".   I recommend answering "yes".  This will set some environment variables persistently in  your shell so that conda is setup every time you open a terminal.  
+I recommend "yes", and the remaining instructions assume that you have done so.
+During the installation, take note of the installation location of miniconda in your log file.
+The default installation should put conda here:  
+$YOUR\_HOME\_DIRECTORY/opt/miniconda3/$ \\
+------------------------------------------\\
+Installing PIMA  Conda Environment\\
+-----------------------------------------\\
+Make sure your conda is fully up to date with:\\
+conda update conda \\
+then follow the prompts, e.g. selecting "y" as needed to update any out-of-date packages. We'll be using a conda environment specifically for PIMA school to avoid conflicts with any other projects on your computer, and to ensure that we all have the same software installed.  \\
+To create our environment:  \\
+conda create -n pima python=3.8 numpy scipy matplotlib ipython jupyter \\
+
+------------------------------------------------------------- \\
+Starting pima Conda Environment and Jupyter Notebook \\
+------------------------------------------------------------- \\
+Activate the pima python environment with  \\
+conda activate pima  \\
+
+now we need to install last package: sep \\
+there are two way: \\
+\begin{lstlisting}[language=bash]
+$   conda install -c conda-forge sep 
+\end{lstlisting}
+or \\
+\begin{lstlisting}[language=bash]
+$  pip install sep
+\end{lstlisting}
+
+Then launch jupyter notebook with: \\
+jupyter notebook \\
+Note that the directory in which you run this command will be the rootdirectory in your jupyter notebook.  Keep this in mind when you are reading or writing data files!
+When you are done with pima for the session you can deactivate the environment with: 
+\begin{lstlisting}[language=bash]
+ $ conda deactivate 
+\end{lstlisting}
 
 
 
