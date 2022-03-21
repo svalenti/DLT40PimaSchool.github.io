@@ -164,13 +164,17 @@ Make sure your conda is fully up to date with:\\
 conda update conda \\
 then follow the prompts, e.g. selecting "y" as needed to update any out-of-date packages. We'll be using a conda environment specifically for PIMA school to avoid conflicts with any other projects on your computer, and to ensure that we all have the same software installed.  \\
 To create our environment:  \\
-conda create -n pima python=3.8 numpy scipy matplotlib ipython jupyter \\
+\begin{lstlisting}[language=bash]
+$  conda create -n pima python=3.8 numpy scipy matplotlib ipython jupyter 
+\end{lstlisting}
 
 ------------------------------------------------------------- \\
 Starting pima Conda Environment and Jupyter Notebook \\
 ------------------------------------------------------------- \\
 Activate the pima python environment with  \\
-conda activate pima  \\
+\begin{lstlisting}[language=bash]
+$   conda activate pima  
+\end{lstlisting}
 
 now we need to install last package: sep \\
 there are two way: \\
