@@ -1,0 +1,1 @@
+../../lecture2/solar_spectrum_3.txt
