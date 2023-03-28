@@ -1,0 +1,319 @@
+\documentclass[11pt]{book}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{empheq}
+\usepackage{makeidx}
+\usepackage{listings}
+
+%\usepackage[T2A,T1]{fontenc}
+%\usepackage[uft8]{inputenc}
+%\usepackage[T1]{fontenc}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+\newcommand*\widefbox[1]{\fbox{\hspace{1em}#1\hspace{1em}}}
+\def\lsun{$L_{\odot}$}
+\def\msun{$M_{\odot}$}
+\def\rsun{$R_{\odot}$}
+\def\pasp{PASP}                 % Astrophysical Journal
+\def\qjras{QJRAS}                 % Astrophysical Journal
+\def\pasa{PASA}                 % Astrophysical Journal
+\def\apj{ApJ}                 % Astrophysical Journal
+\def\apjl{ApJL}                % Astrophysical Journal, Letters
+\def\apjs{ApJS}               % Astrophysical Journal, Supplement
+\def\aj{AJ}			% Astronomical Journal
+\def\apss{Ap\&SS}		% Astrophysics and Space Science
+\def\aap{A\&A}		% Astronomy and Astrophysics
+\def\mnras{MNRAS}	% Monthly Notices of the RAS
+\def\nat{Nature}	% Monthly Notices of the RAS
+\def\prd{Phys Rev D}
+
+
+\makeindex
+\begin{document}
+\title{PIMA school}
+
+\maketitle
+
+\frontmatter
+\tableofcontents
+\mainmatter
+
+~\\
+These are the notes for the PIMA school 2022.
+
+
+
+\chapter{Lecture 0}
+
+\section{Introduction to Shell terminal}
+The shell is a program where users can type commands. With the shell, it‚Äôs possible to invoke complicated programs like climate modeling software or simple commands that create an empty directory with only one line of code. The most popular Unix shell is Bash (the Bourne Again SHell ‚Äî so-called because it‚Äôs derived from a shell written by Stephen Bourne). Bash is the default shell on most modern implementations of Unix and in most packages that provide Unix-like tools for Windows.
+
+Using the shell will take some effort and some time to learn. While a GUI presents you with choices to select, the command line does not. You must learn a few commands just like new vocabulary words in a language you'Äôre studying. However, unlike a spoken language, a small number of `words'Äù (i.e. commands) gets you a long way, and we will cover those essential few today.
+
+The grammar of a shell allows you to combine existing tools into powerful pipelines and handle large volumes of data automatically. Sequences of commands can be written into a script, or a sequence of commands that can be run all at once, improving the reproducibility of workflows.
+
+In addition, the command line is often the easiest way to interact with remote machines and supercomputers. Familiarity with the shell is near essential to run a variety of specialized tools and resources including high-performance computing systems. As clusters and cloud computing systems become more popular for scientific data crunching, being able to interact with the shell is becoming a necessary skill. We can build on the command-line skills covered here to tackle a wide range of scientific questions and computational challenges.
+
+Let'Äôs get started.
+
+When the shell is first opened, you are presented with a \emph{prompt}, indicating that the shell is waiting for input.
+
+\begin{figure}
+\includegraphics[scale=.6]{figures/bash.png}
+\caption{bash prompt}
+\end{figure}
+
+The shell typically uses \$ as the prompt, but may use a different symbol. In the examples for this lesson, we‚Äôll show the prompt as \$ . Most importantly: when typing commands, either from these lessons or from other sources, do not type the prompt, only the commands that follow it. Also note that after you type a command, you have to press the Enter key to execute it.
+
+The prompt is followed by a text cursor, a character that indicates the position where your typing will appear. The cursor is usually a flashing or solid block, but it can also be an underscore or a pipe. You may have seen it in a text editor program, for example.
+
+So let's try our first command, `ls' is short for listing. This command will list the contents of the current directory.  Note that if you are using a Windows machine, some commands will be different.  You can translate between the linux commands below and Windows commands by looking at a website like this: \\
+{\bf https://www.geeksforgeeks.org/linux-vs-windows-commands/ } \\
+
+\begin{figure}[!]
+\includegraphics[scale=.6]{figures/ls.png}
+\caption{ls command}
+\end{figure}
+
+
+
+The part of the operating system responsible for managing files and directories is called the file system. It organizes our data into files, which hold information, and directories (also called `Äòfolders'Äô), which hold files or other directories.
+
+Several commands are frequently used to create, inspect, rename, and delete files and directories. To start exploring them, we wilÄôll go to our open shell window.
+
+First let's find out where we are by running a command called \emph{pwd} (which stands for `print working directory'Äô). Directories are like places - at any time while we are using the shell we are in exactly one place, called our current working directory. Commands mostly read and write files in the current working directory, i.e. `Äòhere'Äô, so knowing where you are before running a command is important. pwd shows you where you are.
+
+\begin{figure}[!]
+\includegraphics[scale=.6]{figures/pwd.png}
+\caption{pwd command}
+\end{figure}
+
+Here, the computer'Äôs response is \emph{/Users/nelle}, which is Nelle'Äôs home directory.
+The home directory path will look different on different operating systems. On Linux it may look like /home/nelle, and on Windows it will be similar to C:\slash Documents and Settings\slash nelle or C:\slash Users \slash nelle. (Note that it may look slightly different for different versions of Windows.) In future examples, we will use Mac output as the default - Linux and Windows output may differ slightly, but should be generally similar.
+
+We will also assume that your pwd command returns your users home directory. If pwd returns something different you may need to navigate there using \emph{cd} or some commands in this lesson will not work as written. 
+See Exploring Other Directories for more details on the cd command.
+
+\begin{figure}[!]
+\includegraphics[scale=.6]{figures/cd.png}
+\caption{cd command (dir in Windows)}
+\end{figure}
+
+
+\begin{figure}[!]
+\includegraphics[scale=.6]{figures/cdback.png}
+\caption{command to go up one directory}
+\end{figure}
+
+
+Let's create a new directory called \emph{pima} using the command (which has no output):
+\begin{lstlisting}[language=bash]
+mkdir pima 
+\end{lstlisting}
+
+\begin{figure}[!]
+\includegraphics[scale=.6]{figures/mkdirpima.png}
+\caption{make a new directory}
+\end{figure}
+
+\section{Install miniconda and PIMA environment } 
+------------------------------------ \\
+{\bf Installing Miniconda3 under Windows} \\
+------------------------------------ \\
+Download and run the appropriate installer from: \\
+{\bf https://docs.conda.io/en/latest/miniconda.html} \\
+If prompted, you should choose to:\\
+1)  Accept the license / terms of use.\\
+2)  Install for just the current user, not all users.\\
+Once installed, check that you can run the "Anaconda Prompt".  \\
+From the prompt, run the command: \\
+
+\noindent conda --version  [there are two dashes]\\
+
+Video to install miniconda on Windows \\
+https://www.youtube.com/watch?v=tXgPY4lc6fo \\
+
+-------------------------------------------- \\
+Installing Miniconda3 under Linux or macOS \\
+-------------------------------------------- \\
+Download the appropriate installer for your OS here:
+$https://docs.conda.io/en/latest/miniconda.html$ \\
+For macOS, you can choose between a "package" or "bash" version. \\
+I find it easier to follow the bash version, but the package version will work too.  I recommend you make the following choices described below.\\
+1)  Accept the license / terms of use. \\
+2)  Do not install for all users, but just the current user.\\
+3)  You might be asked whether or not to allow the installer to issue "conda init".  \\
+Answering "no" will require you to activate conda yourself each time you open a new terminal, following the instructions that will be provided during installation.   Make sure you record these instructions if you choose "no".   I recommend answering "yes".  This will set some environment variables persistently in  your shell so that conda is setup every time you open a terminal.  
+I recommend "yes", and the remaining instructions assume that you have done so.
+During the installation, take note of the installation location of miniconda in your log file.
+The default installation should put conda here:  
+$YOUR\_HOME\_DIRECTORY/opt/miniconda3/$ \\
+------------------------------------------\\
+Installing PIMA  Conda Environment\\
+-----------------------------------------\\
+Make sure your conda is fully up to date with:\\
+conda update conda \\
+then follow the prompts, e.g. selecting "y" as needed to update any out-of-date packages. We'll be using a conda environment specifically for PIMA school to avoid conflicts with any other projects on your computer, and to ensure that we all have the same software installed.  \\
+To create our environment:  \\
+\begin{lstlisting}[language=bash]
+$  conda create -n pima python=3.8 numpy scipy matplotlib ipython jupyter 
+\end{lstlisting}
+
+------------------------------------------------------------- \\
+Starting pima Conda Environment and Jupyter Notebook \\
+------------------------------------------------------------- \\
+Activate the pima python environment with  \\
+\begin{lstlisting}[language=bash]
+$   conda activate pima  
+\end{lstlisting}
+
+now we need to install last package: sep \\
+there are two way: \\
+\begin{lstlisting}[language=bash]
+$   conda install -c conda-forge sep 
+\end{lstlisting}
+or \\
+\begin{lstlisting}[language=bash]
+$  pip install sep
+\end{lstlisting}
+
+Then launch jupyter notebook with: \\
+jupyter notebook \\
+Note that the directory in which you run this command will be the rootdirectory in your jupyter notebook.  Keep this in mind when you are reading or writing data files!
+When you are done with pima for the session you can deactivate the environment with: 
+\begin{lstlisting}[language=bash]
+ $ conda deactivate 
+\end{lstlisting}
+
+
+
+\newpage
+
+\section{Starting a Jupyter notebook}
+This course will make extensive use of the Jupyter Notebook interface to Scientific Python, whichis  well  suited  to  academic  work  (including  independent  research)  because  it  combines  code  withoutput in digestable chunks.  Even when the end product is a polished piece of software, much of the development occurs in the sort of interactive sessions that Jupyter Notebooks provide.\\
+
+After following the software installation instructions on the course website, activate the pima environment with:
+
+\begin{lstlisting}[language=bash]
+  $ conda activate pima
+\end{lstlisting}
+
+Then, navigate to a working directory for this session, and start the notebook with:
+
+\begin{lstlisting}[language=bash]
+$ jupyter notebook
+\end{lstlisting}
+
+This should start the Jupyter Notebook server and open a client in your web browser.  An example starting a Jupyter Notebook from Linux is shown in Fig. 1.1.
+
+\begin{figure}[!]
+\includegraphics[scale=.6]{figures/start_jupyter.png}
+\end{figure}
+
+You should create one new Jupyter Notebook, by choosing the New (Python 3) option in your client.  Change the name of your notebook to something that clearly identifies what we are doing.  Start each notebook with comments (starting with ‚Äú\#‚Äù symbol) indicating the title of the notebook.  See the first cell of Fig. xx for an example.  This first cell is also a good place to issue the ipython ‚Äúmagic function‚Äù: \%{} pylab inline which will setup the notebook for inline plots and load the numpy and matplotlib libraries for you.
+
+\begin{figure}[!]
+\includegraphics[scale=.45]{figures/notebook.png}
+\caption{empty notebook}
+\end{figure}
+
+\begin{figure}[!]
+\includegraphics[scale=.45]{figures/notebook_create_file.png}
+\caption{make new python 3 file in notebook}
+\end{figure}
+
+\begin{figure}[!]
+\includegraphics[scale=.45]{figures/helloworld.png}
+\caption{notebook "hello world"}
+\end{figure}
+
+Now that we have made our first notebook we can save it and it will have ipynb extension.
+
+
+\subsection{notebook fast command}
+Here we report some short command for notebook:
+
+{\bf Control vs Edit modes}
+\begin{itemize}
+\item esc for control mode
+\item a : insert a new cell above current cell
+\item b : insert a new cell below current cell
+\item d+d : delete current cell
+\item m : convert cell to markdown
+\item y : convert cell to code
+\item enter for edit mode
+\item shift+enter : execute cell
+\end{itemize}
+
+{ \bf Code vs Markdown Cells}
+\begin{itemize}
+\item Markdown:
+\subitem bullets
+\subitem headings
+\subitem equations
+\subitem links
+\subitem very simiar to HTML
+\end{itemize}
+{\bf Navigating the notebook}
+\begin{itemize}
+\item plus : add a new cell
+\item File - Save and Checkpoint or picture of floppy drive: save
+\item Close browser window and type ctl+c twice in command line : Exit
+\end{itemize}
+
+\chapter{Lecture 1}
+\section{Introduction to scipy, numpy and definition}
+Introduction to arrays, variable, string, list, loop and function.
+Use the material in the notebook: \\
+$http://localhost:8888/notebooks/lecture1/PIMA_lecture1.ipynb$ \\
+
+and extra material form scipy lecture.\\
+Plot a spectrum at the end of the lecture, More on plotting in the next lecture.
+
+\chapter{Lecture 2}
+\section{Plot and histograms}
+
+
+
+\chapter{Lecture 3}
+\section{fits images, plot the image, identify object, wcs}
+
+
+
+\chapter{Lecture 4}
+\section{Magnitudes, flux,measure flux,  distance modulus, convert to magnitude calibrate photometry}
+
+
+\chapter{Lecture 5}
+\section{Discover a planet planets}
+
+\chapter{Lecture 6}
+\section{Measure the distance of a Supernova}
+
+\chapter{Lecture 7}
+\section{Color image}
+
+%\begin{equation}
+%dm(r,t) = 4 \pi r^{2} \rho dr - 4 \pi r^{2} \rho v dt 
+%\end{equation}
+
+
+
+%\begin{figure}
+%\includegraphics[scale=.7]{figures/massconservation.png}
+%\end{figure}
+
+
+
+
+%\makeindex
+\end{document}
