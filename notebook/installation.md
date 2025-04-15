@@ -39,7 +39,7 @@ then follow the prompts, e.g. selecting "y" as needed to update any out-of-date 
 We'll be using a conda environment specifically for PIMA school to avoid conflicts 
 with any other projects on your computer, and to ensure that we all have the same software installed.  
 To create our environment:
-conda create -n pima python=3.8 numpy scipy matplotlib ipython jupyter
+conda create -n pima python=3.8 numpy scipy matplotlib ipython jupyter astropy
 
 -------------------------------------------------------------
 Starting pima Conda Environment and Jupyter Notebook
